@@ -14,3 +14,7 @@
 **BaseMvpActivity**：Activity基类，具体的实现Model、View的绑定，我们自己的Activity可直接继承于此类或者自行实现BaseActivity继承于此类；
 
 **BaseMvpFragment**：Fragment基类，具体作用和BaseMvpActivity相同。
+
+## 代码详情可点击以下链接
+
+> https://www.jianshu.com/p/51c4681f7f94
