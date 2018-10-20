@@ -19,20 +19,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="button1"
-            android:text="fragment" />
+            android:text="fragment"
+            android:textAllCaps="false" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:onClick="button2"
-            android:text="fragment2" />
+            android:text="fragment2"
+            android:textAllCaps="false" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:onClick="button3"
-            android:text="fragment3" />
+            android:text="fragment3"
+            android:textAllCaps="false" />
     </RelativeLayout>
 </RelativeLayout>

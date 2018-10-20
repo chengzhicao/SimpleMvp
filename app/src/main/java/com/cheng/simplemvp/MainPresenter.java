@@ -4,15 +4,40 @@ package com.cheng.simplemvp;
 import android.util.Log;
 
 import com.cheng.simplemvplibrary.BasePresenter;
+import com.google.gson.Gson;
+
+import java.util.List;
+
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 
 public class MainPresenter extends BasePresenter<MainModel, MainView> {
+
     public void getData() {//这里要注意判空（view和model可能为空）
-        String dataFromNet = null;
         if (model != null) {
-            dataFromNet = model.getDataFromNet();
-        }
-        if (getView() != null) {
-            getView().setData(dataFromNet);
+            Observable<List<User>> observable = model.getDataFromNet();
+            observable.observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<List<User>>() {
+                @Override
+                public void onSubscribe(Disposable d) {
+                }
+
+                @Override
+                public void onNext(List<User> users) {
+                    if (getView() != null) {
+                        getView().setData(new Gson().toJson(users));
+                    }
+                }
+
+                @Override
+                public void onError(Throwable e) {
+                }
+
+                @Override
+                public void onComplete() {
+                }
+            });
         }
     }
 
@@ -23,5 +48,4 @@ public class MainPresenter extends BasePresenter<MainModel, MainView> {
             model.stopRequest();
         }
     }
-
 }

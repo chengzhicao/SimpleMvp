@@ -1,5 +1,5 @@
 # SimpleMvp
-## 一个精简的Android MVP框架
+## 一个精简的Android MVP框架，网络请求使用RxJava+Retrofit将更为方便
 
 **Model**：框架中的模型超类，负责提供数据；
 

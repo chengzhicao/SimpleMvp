@@ -7,14 +7,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends BaseActivity<MainModel, MainView, MainPresenter> implements MainView {
-    private Button btnFirst;
+    private TextView tvData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnFirst = findViewById(R.id.btn_first);
+        tvData = findViewById(R.id.tv_data);
+        Button btnFirst = findViewById(R.id.btn_first);
         btnFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +49,7 @@ public class MainActivity extends BaseActivity<MainModel, MainView, MainPresente
 
     @Override
     public void setData(String str) {
-        btnFirst.setText(str);
+        tvData.setText(str);
     }
 
     @Override
